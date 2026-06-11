@@ -192,6 +192,475 @@ cs3345-java-examples/
 
 The actual folder names may differ depending on how the course materials are organized.
 
+## Using Git, GitHub, and Codespaces for This Project
+
+This section explains how students can use this repository, run the Java examples, make their own changes, and save their work using Git and GitHub Codespaces.
+
+You do **not** need to install Java or an IDE on your computer if you use GitHub Codespaces. Codespaces gives you a browser-based development environment where you can edit, compile, and run the Java examples.
+
+## Recommended Student Workflow
+
+For this course, the recommended workflow is:
+
+1. Fork this repository to your own GitHub account.
+2. Open your fork in GitHub Codespaces.
+3. Run the Java examples.
+4. Modify the code for practice.
+5. Commit your changes.
+6. Push your changes to your own fork.
+
+Students should not try to push changes directly to the original course repository.
+
+## Step 1: Fork This Repository
+
+A fork is your own copy of this repository under your GitHub account.
+
+To create a fork:
+
+1. Open the original course repository on GitHub.
+2. Click the **Fork** button near the top-right corner of the page.
+3. Choose your own GitHub account as the destination.
+4. Keep the repository name as it is, or rename it if you prefer.
+5. Click **Create fork**.
+
+After this step, you will have your own copy of the repository.
+
+For example, the original repository may look like this:
+
+```text
+BilgisayarKavramlari/DataStructures-and-Algorithm-Analysis
+```
+
+Your fork may look like this:
+
+```text
+your-github-username/DataStructures-and-Algorithm-Analysis
+```
+
+Make sure you are working in **your own fork**, not directly in the instructor's repository.
+
+## Step 2: Open the Project in GitHub Codespaces
+
+After creating your fork:
+
+1. Go to your forked repository on GitHub.
+2. Click the green **Code** button.
+3. Open the **Codespaces** tab.
+4. Click **Create codespace on main**.
+
+GitHub will create a browser-based coding environment for you. This may take a minute the first time.
+
+Once the Codespace opens, you should see a VS Code-like interface in your browser.
+
+## Step 3: Open the Terminal
+
+Inside Codespaces:
+
+1. Look at the top menu.
+2. Click **Terminal**.
+3. Click **New Terminal**.
+
+You will use this terminal to compile and run Java programs.
+
+## Step 4: Check the Project Files
+
+In the terminal, you can list the files and folders using:
+
+```bash
+ls
+```
+
+You should see folders such as:
+
+```text
+module-01-java-review
+module-02-data-structures-review
+module-03-java-collections
+module-04-growth-rates
+module-05-recursion-factorial-fibonacci
+module-06-maximum-subsequence-sum
+module-07-formal-algorithm-analysis
+```
+
+The exact folder names may differ slightly depending on the current version of the repository.
+
+## Step 5: Move into a Module Folder
+
+Use the `cd` command to move into a folder.
+
+Example:
+
+```bash
+cd module-01-java-review
+```
+
+To see the files in that folder:
+
+```bash
+ls
+```
+
+If you want to go back to the main project folder:
+
+```bash
+cd ..
+```
+
+## Step 6: Compile a Java File
+
+Most Java examples can be compiled using `javac`.
+
+Example:
+
+```bash
+javac LinearExample.java
+```
+
+If the file compiles successfully, there may be no output. That usually means the compilation worked.
+
+If there is an error, read the error message carefully. Java error messages often tell you the file name, line number, and type of problem.
+
+## Step 7: Run a Java Program
+
+After compiling a Java file, run it using the `java` command.
+
+Example:
+
+```bash
+java LinearExample
+```
+
+Do not include `.java` when running the program.
+
+Correct:
+
+```bash
+java LinearExample
+```
+
+Incorrect:
+
+```bash
+java LinearExample.java
+```
+
+## Step 8: Compile All Java Files in a Folder
+
+If a folder contains multiple Java files, you can compile all of them with:
+
+```bash
+javac *.java
+```
+
+This compiles every `.java` file in the current folder.
+
+Then run the class that contains the `main` method.
+
+Example:
+
+```bash
+java Main
+```
+
+or:
+
+```bash
+java MaxSubsequenceTestHarness
+```
+
+The class name must match the name of the class containing:
+
+```java
+public static void main(String[] args)
+```
+
+## Step 9: Clean Compiled Files
+
+When you compile Java code, Java may generate `.class` files.
+
+These files are compiled outputs. You usually do not need to commit them to GitHub.
+
+To remove compiled `.class` files from the current folder:
+
+```bash
+rm *.class
+```
+
+To remove `.class` files from all folders:
+
+```bash
+find . -name "*.class" -delete
+```
+
+## Basic Git Commands
+
+Git helps you track your changes.
+
+The most common Git commands are:
+
+```bash
+git status
+```
+
+Shows which files have changed.
+
+```bash
+git add .
+```
+
+Stages all changed files for commit.
+
+```bash
+git commit -m "Your commit message"
+```
+
+Saves a snapshot of your changes.
+
+```bash
+git push
+```
+
+Uploads your committed changes to your GitHub fork.
+
+## Step 10: Check Your Current Git Status
+
+Before saving your work, check what changed:
+
+```bash
+git status
+```
+
+You may see modified files, new files, or deleted files.
+
+## Step 11: Stage Your Changes
+
+To stage all changes:
+
+```bash
+git add .
+```
+
+To stage only one file:
+
+```bash
+git add module-01-java-review/LinearExample.java
+```
+
+## Step 12: Commit Your Changes
+
+A commit is a saved version of your work.
+
+Use a short and meaningful commit message.
+
+Example:
+
+```bash
+git commit -m "Practice linear and quadratic growth examples"
+```
+
+Other good commit message examples:
+
+```bash
+git commit -m "Add my solution for array practice"
+```
+
+```bash
+git commit -m "Modify Fibonacci example"
+```
+
+```bash
+git commit -m "Add comments to maximum subsequence code"
+```
+
+## Step 13: Push Your Changes to GitHub
+
+After committing, push your changes to your fork:
+
+```bash
+git push
+```
+
+If this is your first push from a new branch, Git may ask you to use a longer command. It may look like this:
+
+```bash
+git push --set-upstream origin main
+```
+
+or:
+
+```bash
+git push -u origin main
+```
+
+Follow the instruction shown in the terminal.
+
+## Step 14: Confirm Your Changes on GitHub
+
+After pushing:
+
+1. Go back to your fork on GitHub.
+2. Refresh the page.
+3. Open the file you changed.
+4. Confirm that your latest code appears online.
+
+If you can see your updated file on GitHub, your push worked.
+
+## Common Git Workflow for Students
+
+A typical work session looks like this:
+
+```bash
+git status
+cd module-04-growth-rates
+javac LinearExample.java
+java LinearExample
+cd ..
+git status
+git add .
+git commit -m "Practice growth rate examples"
+git push
+```
+
+## If You Make a Mistake
+
+If your code does not compile, carefully read the error message.
+
+Common Java mistakes include:
+
+- File name does not match the public class name.
+- Missing semicolon.
+- Missing closing brace `}`.
+- Running the program with `.java` in the command.
+- Trying to run a class that does not contain a `main` method.
+
+Example:
+
+```bash
+javac MyExample.java
+java MyExample
+```
+
+If the class is named:
+
+```java
+public class MyExample
+```
+
+then the file must be named:
+
+```text
+MyExample.java
+```
+
+## Keeping Your Fork Updated
+
+The instructor may update the original course repository during the semester.
+
+If you want to update your fork with the latest course materials, you can use GitHub's **Sync fork** button on your fork page.
+
+Basic browser steps:
+
+1. Go to your forked repository.
+2. Look for the **Sync fork** button.
+3. Click **Update branch** if GitHub says your fork is behind.
+
+This brings new changes from the original course repository into your fork.
+
+## Optional: Using Git Pull in Codespaces
+
+If your fork has been updated on GitHub and you want to bring those changes into your Codespace, use:
+
+```bash
+git pull
+```
+
+This downloads the latest changes from your GitHub fork into your Codespace.
+
+A common update workflow is:
+
+```bash
+git status
+git pull
+```
+
+If you have local changes, commit them before pulling.
+
+## Important: Work in Your Own Fork
+
+Please remember:
+
+- The instructor's repository is the official course version.
+- Your fork is your personal working copy.
+- You should make experiments and changes in your own fork.
+- Do not try to push directly to the instructor's repository.
+- Do not submit pull requests unless the instructor specifically asks you to do so.
+
+## Suggested Practice Workflow
+
+For each code example:
+
+1. Open the related module folder.
+2. Read the Java file.
+3. Predict the output.
+4. Compile the program.
+5. Run the program.
+6. Modify the input values.
+7. Run it again.
+8. Explain the time complexity.
+9. Commit your changes to your fork.
+
+Example:
+
+```bash
+cd module-06-maximum-subsequence-sum
+javac MaxSubsequenceLinear.java
+java MaxSubsequenceLinear
+```
+
+Then modify the input array and run it again.
+
+## Example Practice Session
+
+```bash
+cd module-06-maximum-subsequence-sum
+javac MaxSubsequenceLinear.java
+java MaxSubsequenceLinear
+```
+
+After editing the file:
+
+```bash
+javac MaxSubsequenceLinear.java
+java MaxSubsequenceLinear
+```
+
+Then save your work:
+
+```bash
+cd ..
+git status
+git add .
+git commit -m "Experiment with maximum subsequence sum input"
+git push
+```
+
+## What You Should Learn from This Workflow
+
+By using Git, GitHub, and Codespaces, you practice not only Java programming but also a professional software development workflow.
+
+You will learn how to:
+
+- Read code from a repository
+- Run Java programs in a cloud development environment
+- Modify examples safely
+- Track your changes with Git
+- Save your work on GitHub
+- Organize programming practice by module
+- Connect code behavior with algorithm analysis
+
+This workflow is part of becoming comfortable with real-world software development tools.
+
+
 ## How to Run the Code
 
 Most examples are written as simple Java files so that students can compile and run them directly.
