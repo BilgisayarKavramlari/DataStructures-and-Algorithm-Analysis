@@ -34,9 +34,10 @@ This repository uses the following terminology carefully:
 | Term | Meaning |
 |---|---|
 | **Course Module** | The official theory unit used in eLearning. Course Modules organize lecture topics, readings, slides, quizzes, assignments, and assessments. |
-| **Coding Lab** | A GitHub practice folder containing Java examples, implementation exercises, trace demos, and complexity questions. |
+| **Coding Lab** | A GitHub student-facing practice folder containing Java examples, implementation exercises, trace demos, and complexity questions. |
+| **Practice Module** | An instructor-facing folder named `practice-module-XX-*` containing lecture-ready Java code, run order notes, expected output, instructor notes, and student prompts for Wednesday practice sessions. |
 
-GitHub practice folders must be called **Coding Labs**, not modules.
+GitHub student practice folders must be called **Coding Labs**, not modules. Instructor-facing live-coding folders are called **Practice Modules**.
 
 For example:
 

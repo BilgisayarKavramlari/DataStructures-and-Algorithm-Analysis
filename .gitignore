@@ -9,3 +9,6 @@
 # Temporary files
 *.tmp
 *.log
+build/
+out/
+target/

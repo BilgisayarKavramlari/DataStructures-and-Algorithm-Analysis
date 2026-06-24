@@ -1,0 +1,1 @@
+public class TraceDemo { public static void main(String[] args){TeachingSplay t=new TeachingSplay();for(int x:new int[]{10,20,30,25})t.insert(x);System.out.println("root after insert-splay="+t.root.k);t.access(10);System.out.println("root after accessing 10="+t.root.k);}}
