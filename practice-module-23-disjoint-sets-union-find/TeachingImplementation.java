@@ -1,2 +1,0 @@
-import java.util.*;
-class TeachingDisjointSet { int[] p,rank; TeachingDisjointSet(int n){p=new int[n];rank=new int[n];for(int i=0;i<n;i++)p[i]=i;} int find(int x){if(p[x]!=x)p[x]=find(p[x]);return p[x];} void union(int a,int b){int ra=find(a),rb=find(b);if(ra==rb)return;if(rank[ra]<rank[rb])p[ra]=rb;else if(rank[ra]>rank[rb])p[rb]=ra;else{p[rb]=ra;rank[ra]++;}} void print(){System.out.println(Arrays.toString(p));} }

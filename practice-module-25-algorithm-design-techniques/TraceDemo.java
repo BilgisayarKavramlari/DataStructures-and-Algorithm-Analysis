@@ -1,1 +1,0 @@
-import java.util.*; public class TraceDemo { public static void main(String[] args){System.out.println("greedy coins="+Arrays.toString(TeachingDesignTechniques.greedyCoins(63)));System.out.println("fibDP(10)="+TeachingDesignTechniques.fibDP(10));TeachingDesignTechniques.advanced();}}

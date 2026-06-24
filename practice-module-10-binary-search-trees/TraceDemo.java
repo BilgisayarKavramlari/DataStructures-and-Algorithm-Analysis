@@ -1,1 +1,0 @@
-public class TraceDemo { public static void main(String[] args){TeachingBST<Integer> t=new TeachingBST<Integer>();for(int x:new int[]{6,3,8,1,4,7,9})t.insert(x);t.printTree();System.out.println("min="+t.findMin()+" max="+t.findMax()+" height="+t.height()+" count="+t.count()+" leaves="+t.leaves()+" invariant="+t.invariant());}}

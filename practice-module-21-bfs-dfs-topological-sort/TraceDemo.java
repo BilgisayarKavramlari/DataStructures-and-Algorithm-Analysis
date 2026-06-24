@@ -1,1 +1,0 @@
-import java.util.*; public class TraceDemo { public static void main(String[] args){System.out.print("BFS: ");TeachingGraphTraversal.bfs();System.out.print("DFS: ");TeachingGraphTraversal.dfs("A",new LinkedHashSet<String>());System.out.println();System.out.println("Topological order example: A before B and C; B and C before D.");}}

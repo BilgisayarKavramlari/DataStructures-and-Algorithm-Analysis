@@ -1,2 +1,0 @@
-import java.util.*;
-class TeachingDesignTechniques { static int[] greedyCoins(int amount){int[] coins={25,10,5,1},used=new int[coins.length];for(int i=0;i<coins.length;i++){used[i]=amount/coins[i];amount%=coins[i];}return used;} static int fibDP(int n){int[] dp=new int[n+2];dp[1]=1;for(int i=2;i<=n;i++)dp[i]=dp[i-1]+dp[i-2];return dp[n];} static void advanced(){System.out.println("Huffman coding, bin packing, closest-pair, matrix chain, optimal BST, skip list, primality, and backtracking are shown as runnable concept traces.");} }

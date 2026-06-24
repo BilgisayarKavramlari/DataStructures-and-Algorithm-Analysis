@@ -1,3 +1,0 @@
-import java.util.*;
-/** Hash-table demonstrations: chaining, probing, rehashing, and advanced hashing names. */
-class TeachingHashTables { static int stringHash(String s,int m){int h=0;for(int i=0;i<s.length();i++)h=(31*h+s.charAt(i))%m;return h;} static void demo(){String[] keys={"tree","heap","hash","graph"};for(String k:keys)System.out.println(k+" -> "+stringHash(k,11));System.out.println("Open addressing probes: linear, quadratic, double hashing; lazy deletion uses tombstones; rehash when load factor grows.");System.out.println("Advanced trace topics: cuckoo hashing, hopscotch hashing, universal hashing, perfect hashing, extendible hashing.");} }

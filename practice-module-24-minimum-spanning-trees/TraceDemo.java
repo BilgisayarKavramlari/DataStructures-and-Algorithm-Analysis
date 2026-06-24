@@ -1,1 +1,0 @@
-public class TraceDemo { public static void main(String[] args){System.out.println("Kruskal MST total="+TeachingMST.kruskal());System.out.println("Prim grows one tree with a priority queue; disconnected graphs produce a forest.");}}

@@ -1,1 +1,0 @@
-public class TraceDemo { public static void main(String[] args){TeachingMinHeap h=new TeachingMinHeap();for(int x:new int[]{9,4,7,1,3})h.insert(x);System.out.println("heap min="+h.findMin());System.out.println("deleteMin="+h.deleteMin());TeachingMinHeap.advancedVariants();}}

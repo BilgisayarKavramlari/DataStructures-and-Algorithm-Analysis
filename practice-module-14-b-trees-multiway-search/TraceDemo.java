@@ -1,1 +1,0 @@
-public class TraceDemo { public static void main(String[] args){TeachingBTree b=new TeachingBTree();for(int x:new int[]{8,9,10,11,15,20,17})b.insert(x);System.out.println("contains 15="+b.contains(15));System.out.println("Deletion concepts: borrow from sibling, merge nodes, and shrink root when empty.");}}

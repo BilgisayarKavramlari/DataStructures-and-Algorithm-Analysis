@@ -1,1 +1,0 @@
-public class TraceDemo { public static void main(String[] args){TeachingAVL t=new TeachingAVL();for(int x:new int[]{30,20,10,25,40,50})t.insert(x);System.out.println("AVL invariant valid: "+t.ok()+" root balance="+t.bf(t.root));System.out.println("Deletion is discussed as rebalance-on-return after standard BST removal.");}}
