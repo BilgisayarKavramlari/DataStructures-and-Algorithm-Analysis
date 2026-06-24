@@ -1,0 +1,2 @@
+import java.util.*;
+public class WeightedGraphForMST { static class E implements Comparable<E>{int u,v,w;E(int u,int v,int w){this.u=u;this.v=v;this.w=w;}public int compareTo(E o){return w-o.w;}public String toString(){return u+"-"+v+":"+w;}} static E[] sample(){return new E[]{new E(0,1,1),new E(1,2,2),new E(0,2,4),new E(2,3,3)};} public static void run(){System.out.println("Weighted graph edges: "+Arrays.toString(sample()));} public static void main(String[] args){run();}}

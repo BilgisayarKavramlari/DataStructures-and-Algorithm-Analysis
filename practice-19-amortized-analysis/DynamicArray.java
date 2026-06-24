@@ -1,0 +1,2 @@
+import java.util.*;
+public class DynamicArray { int[] a=new int[2]; int size; void add(int x){if(size==a.length){System.out.println("resize "+a.length+" -> "+(a.length*2));a=Arrays.copyOf(a,a.length*2);}a[size++]=x;} public static void run(){DynamicArray d=new DynamicArray();for(int i=0;i<8;i++)d.add(i);System.out.println("Dynamic array size="+d.size+", capacity="+d.a.length);System.out.println("Invariant: capacity >= size; append is amortized O(1) by spreading resize cost.\n");} public static void main(String[] args){run();}}

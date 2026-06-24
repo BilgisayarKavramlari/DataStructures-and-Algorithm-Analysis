@@ -1,14 +1,7 @@
-# Java build output
 *.class
-
-# Editor and operating system files
 .DS_Store
 .idea/
 .vscode/
-
-# Temporary files
-*.tmp
-*.log
-build/
 out/
+build/
 target/
