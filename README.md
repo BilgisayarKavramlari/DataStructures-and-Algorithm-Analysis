@@ -1,6 +1,6 @@
 # CS 3345: Data Structures and Foundations of Algorithmic Analysis
 
-This repository is a clean Java teaching repository for Wednesday practice sessions. It contains original educational implementations for CS 3345, aligned with theoretical Course Modules and common topics from Mark Allen Weiss, *Data Structures and Algorithm Analysis in Java*, 3rd edition.
+This repository is a clean Java teaching repository for Wednesday practice sessions. This branch intentionally replaces earlier generated content instead of preserving conflicting files. It contains original educational implementations for CS 3345, aligned with theoretical Course Modules and common topics from Mark Allen Weiss, *Data Structures and Algorithm Analysis in Java*, 3rd edition.
 
 ## Repository Purpose
 
