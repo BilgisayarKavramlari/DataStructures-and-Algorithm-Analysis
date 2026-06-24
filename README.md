@@ -23,6 +23,53 @@ The code examples are not only written to produce correct outputs, but also to s
 - How to reason about Big O, Big Omega, Big Theta, little o, and little omega
 - How recursion, loops, and divide-and-conquer strategies are analyzed
 
+## Practice Roadmap and Theory Alignment
+
+The following table shows the intended relationship between the course modules, practice folders, and textbook topics.
+
+| Practice | Course Module | Practice Folder | Weiss Chapter / Topic | Main Theory Topics |
+|---:|---|---|---|---|
+| 00 | Module 0 | `practice-00-repository-codespaces-setup` | Java environment setup | GitHub, Codespaces, `javac`, `java`, `Main.java`, command-line workflow |
+| 01 | Module 0 / Module 1 | `practice-01-java-review` | Java review | variables, loops, arrays, methods, objects, generics, `Comparable`, `Comparator` |
+| 02 | Module 1 / Module 2 | `practice-02-adt-linear-structures-review` | Chapter 3: Lists, Stacks, and Queues | ADT idea, array lists, linked lists, stacks, queues, deque, iterators |
+| 03 | Module 1 / Module 2 | `practice-03-java-collections` | Java Collections API | `Collection`, `List`, `Set`, `Map`, `Queue`, `Deque`, `PriorityQueue` |
+| 04 | Module 1 | `practice-04-growth-rates` | Chapter 2: Algorithm Analysis | growth rates, operation counting, empirical timing, dominant terms |
+| 05 | Module 2 | `practice-05-recursion-factorial-fibonacci` | Chapter 1 / Chapter 2: Recursion and Analysis | recursion, base case, call stack, factorial, Fibonacci, memoization |
+| 06 | Module 2 | `practice-06-maximum-subsequence-sum` | Chapter 2: Maximum Subsequence Sum | cubic, quadratic, divide-and-conquer, and linear-time algorithms |
+| 07 | Module 1 / Module 2 | `practice-07-formal-algorithm-analysis` | Chapter 2: Formal Algorithm Analysis | Big-O, Big-Omega, Big-Theta, little-o, loop analysis, recurrences |
+| 08 | Module 3 | `practice-08-tree-basics-traversals` | Chapter 4: Trees | tree terminology, first-child/next-sibling, binary trees, traversals, depth, height |
+| 09 | Module 3 | `practice-09-expression-trees` | Chapter 4: Expression Trees | postfix construction, stack-based tree building, prefix/infix/postfix traversal, evaluation |
+| 10 | Module 3 | `practice-10-binary-search-trees` | Chapter 4: Binary Search Trees | BST invariant, search, insert, remove, min/max, predecessor/successor, height |
+| 11 | Module 4 | `practice-11-avl-trees-rotations` | Chapter 4: AVL Trees | height balance, balance factor, LL/RR/LR/RL rotations, AVL invariant |
+| 12 | Module 4 | `practice-12-splay-trees` | Chapter 4 / Chapter 11: Splay Trees | zig, zig-zig, zig-zag, access locality, amortized intuition |
+| 13 | Module 4 | `practice-13-red-black-and-2-4-trees` | Chapter 12 / Chapter 4: Red-Black and 2-4 Trees | red-black invariants, rotations, recoloring, black height, 2-4 correspondence |
+| 14 | Module 4 | `practice-14-b-trees-multiway-search` | Chapter 4: B-Trees | multi-way search, B-tree insertion, splitting, median promotion, disk-block motivation |
+| 15 | Module 4 | `practice-15-java-ordered-collections` | Chapter 4: TreeSet and TreeMap | ordered sets/maps, `Comparable`, `Comparator`, range queries, ordering pitfalls |
+| 16 | Module 5 | `practice-16-binary-heap-priority-queue` | Chapter 6: Priority Queues and Heaps | binary heap, insert, deleteMin, buildHeap, selection problem, event simulation |
+| 17 | Module 5 | `practice-17-sorting-algorithms` | Chapter 7: Sorting | insertion sort, shellsort, heapsort, mergesort, quicksort, quickselect, radix/bucket ideas |
+| 18 | Module 6 | `practice-18-hash-tables` | Chapter 5: Hashing | hash functions, separate chaining, probing, double hashing, lazy deletion, rehashing |
+| 19 | Module 6 | `practice-19-amortized-analysis` | Chapter 11: Amortized Analysis | dynamic arrays, table doubling, accounting method, potential method, rehashing |
+| 20 | Module 7 | `practice-20-graph-representations` | Chapter 9: Graphs | vertices, edges, adjacency list, adjacency matrix, edge list, sparse/dense graphs |
+| 21 | Module 7 | `practice-21-bfs-dfs-topological-sort` | Chapter 9: Graph Traversal | BFS, DFS, connected components, cycle detection, topological sorting |
+| 22 | Module 8 | `practice-22-shortest-paths-dijkstra` | Chapter 9: Shortest Paths | unweighted shortest paths, relaxation, Dijkstra, path reconstruction, negative edges |
+| 23 | Module 9 | `practice-23-disjoint-sets-union-find` | Chapter 8: Disjoint Sets | quick-find, quick-union, union by size/rank, path compression, maze connectivity |
+| 24 | Module 9 | `practice-24-minimum-spanning-trees` | Chapter 9: Minimum Spanning Trees | Prim, Kruskal, priority queues, union-find, MST trace |
+| 25 | Module 10 | `practice-25-algorithm-design-techniques` | Chapter 10: Algorithm Design Techniques | greedy algorithms, divide and conquer, dynamic programming, backtracking, randomized algorithms |
+| 26 | Module 10 | `practice-26-data-structure-selection` | Chapter 10 / Chapter 12: Design and Advanced Structures | selecting data structures, treap, suffix-array-style index, k-d tree, pairing heap |
+| 27 | Module 11 | `practice-27-final-review-synthesis` | Cumulative Review | complexity, trees, heaps, hashing, sorting, graphs, shortest paths, MST, union-find |
+
+## Suggested Weekly Usage
+
+| Course Phase | Suggested Practice Focus |
+|---|---|
+| Early course setup | Practice 00–03: setup, Java review, ADTs, Java Collections |
+| Algorithm analysis foundation | Practice 04–07: growth rates, recursion, maximum subsequence sum, formal analysis |
+| Trees and balanced search structures | Practice 08–15: tree basics, expression trees, BST, AVL, splay, red-black, B-trees, ordered collections |
+| Heaps, sorting, and hashing | Practice 16–19: priority queues, sorting, hashing, amortized analysis |
+| Graph algorithms and disjoint sets | Practice 20–24: graph representations, BFS/DFS, shortest paths, union-find, MST |
+| Design techniques and review | Practice 25–27: algorithm design, data-structure selection, final review |
+
+
 ## Topics Covered
 
 ### Java Quick Review
