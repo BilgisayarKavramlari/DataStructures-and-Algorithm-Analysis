@@ -1,0 +1,1 @@
+public class TraceDemo { public static void main(String[] args){TeachingRedBlack t=new TeachingRedBlack();for(int x:new int[]{10,20,30,15,5,1}){t.insert(x);System.out.println("insert "+x+" invariants="+t.ok());}TeachingRedBlack.deletionTrace();System.out.println("2-4 correspondence: black node with red children represents a multi-key 2-4 node.");}}
