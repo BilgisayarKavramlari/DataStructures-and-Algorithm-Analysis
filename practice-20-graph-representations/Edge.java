@@ -1,0 +1,1 @@
+public class Edge { int from,to,weight; Edge(int f,int t,int w){from=f;to=t;weight=w;} public String toString(){return from+"->"+to+"("+weight+")";} public static void run(){System.out.println("Edge example: "+new Edge(0,1,5)+". Edge lists store graph relationships explicitly.\n");} public static void main(String[] args){run();}}

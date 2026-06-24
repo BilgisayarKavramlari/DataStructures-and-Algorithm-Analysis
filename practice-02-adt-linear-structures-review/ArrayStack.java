@@ -1,0 +1,2 @@
+import java.util.*;
+public class ArrayStack { private int[] a=new int[4]; private int top; public void push(int x){if(top==a.length)a=Arrays.copyOf(a,a.length*2);a[top++]=x;} public int pop(){if(top==0)throw new EmptyStackException();return a[--top];} public static void run(){ArrayStack s=new ArrayStack();s.push(1);s.push(2);s.push(3);System.out.println("Stack pops in LIFO order: "+s.pop()+", "+s.pop());System.out.println("Invariant: top points one past last item; push/pop amortized O(1).\n");} public static void main(String[] args){run();}}
