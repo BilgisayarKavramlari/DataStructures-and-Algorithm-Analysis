@@ -1,0 +1,1 @@
+public class TraceDemo { public static void main(String[] args){TeachingDisjointSet d=new TeachingDisjointSet(6);d.union(0,1);d.union(1,2);d.union(3,4);d.print();System.out.println("maze generation: remove walls when union connects two different cells.");}}

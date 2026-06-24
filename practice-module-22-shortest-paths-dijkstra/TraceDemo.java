@@ -1,0 +1,1 @@
+public class TraceDemo { public static void main(String[] args){TeachingShortestPaths.dijkstra();System.out.println("DAG shortest path uses topological order; all-pairs can run the single-source method from each start for small demos.");}}
