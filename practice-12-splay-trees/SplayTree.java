@@ -36,6 +36,7 @@ public class SplayTree {
         node.parent = parent;
         if (key < parent.key) parent.left = node; else parent.right = node;
         splay(node);
+        
     }
 
     public boolean access(int key) {
@@ -75,6 +76,7 @@ public class SplayTree {
                 rotateLeft(g);
             }
         }
+        printTree(x," ", " ");
     }
 
     private void rotateLeft(Node x) {

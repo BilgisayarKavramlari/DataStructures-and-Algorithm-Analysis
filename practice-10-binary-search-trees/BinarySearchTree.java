@@ -13,18 +13,18 @@ import java.util.NoSuchElementException;
  */
 public class BinarySearchTree<E extends Comparable<E>> {
     static class Node<E> {
-        E key;
+        E key; // data is in type of E
         Node<E> left;
         Node<E> right;
-        Node(E key) { this.key = key; }
+        Node(E key) { this.key = key; } // constructor
     }
 
     private Node<E> root;
 
-    public void insert(E key) { root = insert(root, key); }
+    public void insert(E key) { root = insert(root, key); } // forwarder , override , polymorphism 
 
     private Node<E> insert(Node<E> node, E key) {
-        if (node == null) return new Node<>(key);
+        if (node == null) return new Node<>(key); // tree is empty
         int cmp = key.compareTo(node.key);
         if (cmp < 0) node.left = insert(node.left, key);
         else if (cmp > 0) node.right = insert(node.right, key);
@@ -72,6 +72,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
                 node.right = remove(node.right, successor.key);
             } else {
                 node = (node.left != null) ? node.left : node.right;
+                // <boolean expression> ? <true> : <false> ;
             }
         }
         return node;
