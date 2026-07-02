@@ -27,6 +27,111 @@ public class RedBlackTreeEducational {
     public RedBlackTreeEducational(boolean trace) { this.trace = trace; }
     public RedBlackTreeEducational() { this(false); }
 
+    public Node findMin(){
+        return findMin(root);
+    }
+
+    public Node findMin(Node node){
+        if(node == null){
+            return null;
+        }
+        while (node.left != null) node = node.left;
+        return node;
+    }
+    public Node parent_findMin(Node node){
+        if(node == null){
+            return null;
+        }
+        while (node.left.left != null) node = node.left;
+        return node;
+    }
+
+    public void delete(int key) {
+        if(!contains(key)){
+            System.out.println("Key not exists in the tree");
+            return;
+        }
+        if( !isRed(root.left) && !isRed(root.right) ){
+            root.color = RED; // root to be deleted
+        }
+        root = delete(root, key);
+        if(root!=null)
+            root.color = BLACK;
+    }
+
+    public Node delete (Node h, int key){
+        if (h == null) {
+            return null;
+        }
+        if (key < h.key){
+            if( !isRed(h.left) &&  !isRed(h.left.left) ){
+                h = moveRedLeft(h);
+            }
+            h.left = delete(h.left, key);
+        } 
+        else { // Left lean RB
+            if(isRed(h.left)){
+                h = rotateLeft(h);
+            }
+            if( key == h.key && h.right==null){
+                return null;
+            }
+            if(!isRed(h.right)&& !isRed(h.right.left)){
+                h = moveRedRight(h);
+            }
+            if(key == h.key){
+                Node successor = findMin(h.right);
+                h.key=successor.key;
+                h.right=deleteMin(h.right);
+            } else{
+                h.right = delete(h.right,key);
+            }
+        }
+        return balance(h);
+    }
+
+    private Node balance(Node h){
+        if(isRed(h.right)&& !isRed(h.left))
+            h = rotateLeft(h);
+        if(isRed(h.left)&& isRed(h.left.left))
+            h = rotateRight(h);
+        if(isRed(h.left)&&isRed(h.right))
+            flipColors(h);
+        return h;
+    }
+
+    private Node deleteMin(Node h){
+        if(h.left == null){
+            return null;
+        }
+        if(!isRed(h.left) && !isRed(h.left.left)){
+            h = moveRedLeft(h);
+        }
+        h.left = deleteMin(h.left);
+        return balance(h);
+    }
+
+    private Node moveRedLeft(Node h){
+        flipColors(h);
+        if(isRed(h.right.left)){
+            h.right= rotateRight(h.right);
+            h = rotateLeft(h);
+            flipColors(h);
+        }
+        return h;
+    }
+
+    private Node moveRedRight(Node h){
+        flipColors(h);
+        if(isRed(h.left.left)){
+            h = rotateRight(h);
+            flipColors(h);
+        }
+        return h;
+
+    }
+
+
     public void insert(int key) {
         root = insert(root, key);
         root.color = BLACK;

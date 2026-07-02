@@ -6,15 +6,35 @@
  */
 public class RedBlackDeletionConceptDemo {
     public static void run() {
-        System.out.println("--- Red-black deletion concept trace ---");
-        String[] cases = {
-            "1. Delete a black leaf: the missing black creates a double-black position.",
-            "2. If sibling is red: rotate parent toward double-black and recolor to get a black sibling case.",
-            "3. If sibling is black with two black children: recolor sibling red and propagate double-black upward.",
-            "4. If sibling is black with a red near child: rotate sibling to convert to far-child case.",
-            "5. If sibling is black with a red far child: rotate parent, recolor, and eliminate double-black."
-        };
-        for (String c : cases) System.out.println(c);
-        System.out.println("Teaching note: deletion is case analysis that preserves equal black height on every path.\n");
+        System.out.println("--- Red-black Delete Checker ---");
+
+        RedBlackTreeEducational tree = new RedBlackTreeEducational(false);
+        // Test what happens if no items in the tree (tree is empty)
+        tree.delete(1); // delete from an empty tree
+        tree.printTree();
+        tree.insert(50); 
+        tree.printTree();
+        tree.delete(2); // delete something not on the tree
+        tree.printTree();
+        tree.delete(50);
+        tree.printTree();
+
+
+        for (int key : new int[]{50, 25, 75, 10, 30, 60, 80, 5, 15}) tree.insert(key);
+        tree.printTree();
+        System.out.println("valid red-black tree? " + tree.isValidRedBlackTree());
+        System.out.println("The checker verifies root black, no red-red parent/child, BST order, and equal black height.\n");
+
+
+        System.out.println ( " ---- Some more tests --- ");
+        tree.delete(80);
+        tree.delete(5);
+        tree.printTree();
+
+        tree.delete(50);
+        tree.printTree();
     }
+
+
+
 }
