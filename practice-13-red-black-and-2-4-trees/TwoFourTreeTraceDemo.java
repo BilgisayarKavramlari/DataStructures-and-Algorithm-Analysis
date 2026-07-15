@@ -1,28 +1,19 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/** Runnable trace of how a 2-4 tree node can overflow and split. */
+/** Prints an insertion sequence and explains where 2-3-4 node splits occur. */
 public class TwoFourTreeTraceDemo {
-    static class Node24 {
-        List<Integer> keys = new ArrayList<>();
-        void addKey(int key) { keys.add(key); Collections.sort(keys); }
-        boolean overflows() { return keys.size() == 4; }
+    public static void run() {
+        System.out.println("-- TwoFourTreeTraceDemo");
+        RedBlackTreeEducational tree = new RedBlackTreeEducational();
+        tree.setVerbose(true);
+        for (int key : new int[] {10, 20, 30, 40, 50, 60, 70}) {
+            System.out.println("insert " + key + " (2-3-4 view: descend, split full nodes on the way back)");
+            tree.insert(key);
+            tree.printTree();
+            tree.validateOrThrow();
+        }
+        System.out.println("  Red-black rotations/recoloring simulate 2-3-4 splits while preserving sorted order.\n");
     }
 
-    public static void run() {
-        System.out.println("--- 2-4 tree split trace ---");
-        Node24 node = new Node24();
-        for (int key : new int[]{10, 20, 30, 40}) {
-            node.addKey(key);
-            System.out.println("after inserting " + key + " into one node: " + node.keys);
-        }
-        if (node.overflows()) {
-            int promoted = node.keys.get(2);
-            List<Integer> left = node.keys.subList(0, 2);
-            List<Integer> right = node.keys.subList(3, 4);
-            System.out.println("overflow: promote " + promoted + ", left child keys=" + left + ", right child keys=" + right);
-        }
-        System.out.println("A red-black color flip corresponds to splitting a temporary 4-node.\n");
+    public static void main(String[] args) {
+        run();
     }
 }
