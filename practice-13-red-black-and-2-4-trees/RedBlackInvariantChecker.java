@@ -1,26 +1,21 @@
-import java.util.*;
-
-/**
- * Live teaching demo for RedBlackInvariantChecker.
- * The example executes a small deterministic computation so students can
- * count operations and discuss edge cases.
- */
+/** Runs invariant checks after a mixed insert/delete sequence. */
 public class RedBlackInvariantChecker {
     public static void run() {
         System.out.println("-- RedBlackInvariantChecker");
-        int[] values = {4, 1, 7, 1, 3};
-        int comparisons = 0;
-        int matches = 0;
-        for (int i = 0; i < values.length; i++) {
-            comparisons++;
-            if (values[i] == 1) {
-                matches++;
-                System.out.println("  found target value 1 at index " + i);
-            }
+        RedBlackTreeEducational tree = new RedBlackTreeEducational();
+        int[] inserts = {25, 10, 40, 5, 15, 30, 50, 1, 8, 12, 18, 28, 35, 45, 60};
+        for (int key : inserts) {
+            tree.insert(key);
+            tree.validateOrThrow();
         }
-        System.out.println("  comparisons=" + comparisons + ", matches=" + matches);
-        System.out.println("  Edge case: an empty array would perform zero loop iterations.");
-        System.out.println("  Complexity: linear scan uses O(n) time and O(1) extra space.\n");
+        System.out.println("  valid after inserts: " + tree.invariantsHold());
+        for (int key : new int[] {1, 50, 25, 10, 35}) {
+            tree.delete(key);
+            tree.validateOrThrow();
+            System.out.println("  valid after deleting " + key + ": " + tree.invariantsHold()
+                    + ", inorder=" + tree.inorderKeys());
+        }
+        System.out.println("  root is black, red nodes have black children, and black-heights match\n");
     }
 
     public static void main(String[] args) {

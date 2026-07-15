@@ -1,26 +1,16 @@
-import java.util.*;
-
-/**
- * Live teaching demo for RedBlackInsertionTrace.
- * The example executes a small deterministic computation so students can
- * count operations and discuss edge cases.
- */
+/** Shows insertion recoloring and rotations using the complete tree implementation. */
 public class RedBlackInsertionTraceDemo {
     public static void run() {
         System.out.println("-- RedBlackInsertionTraceDemo");
-        int[] values = {4, 1, 7, 1, 3};
-        int comparisons = 0;
-        int matches = 0;
-        for (int i = 0; i < values.length; i++) {
-            comparisons++;
-            if (values[i] == 1) {
-                matches++;
-                System.out.println("  found target value 1 at index " + i);
-            }
+        RedBlackTreeEducational tree = new RedBlackTreeEducational();
+        tree.setVerbose(true);
+        for (int key : new int[] {10, 20, 30, 15, 5, 1, 8}) {
+            System.out.println("insert " + key);
+            tree.insert(key);
+            tree.printTree();
+            tree.validateOrThrow();
         }
-        System.out.println("  comparisons=" + comparisons + ", matches=" + matches);
-        System.out.println("  Edge case: an empty array would perform zero loop iterations.");
-        System.out.println("  Complexity: linear scan uses O(n) time and O(1) extra space.\n");
+        System.out.println("  insertion trace finished with valid invariants\n");
     }
 
     public static void main(String[] args) {

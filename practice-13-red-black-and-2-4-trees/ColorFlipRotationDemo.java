@@ -1,26 +1,19 @@
-import java.util.*;
-
-/**
- * Live teaching demo for ColorFlipRotation.
- * The example executes a small deterministic computation so students can
- * count operations and discuss edge cases.
- */
+/** Demonstrates visible recoloring and rotations during insert and delete fix-up. */
 public class ColorFlipRotationDemo {
     public static void run() {
         System.out.println("-- ColorFlipRotationDemo");
-        int[] values = {4, 1, 7, 1, 3};
-        int comparisons = 0;
-        int matches = 0;
-        for (int i = 0; i < values.length; i++) {
-            comparisons++;
-            if (values[i] == 1) {
-                matches++;
-                System.out.println("  found target value 1 at index " + i);
-            }
+        RedBlackTreeEducational tree = new RedBlackTreeEducational();
+        tree.setVerbose(true);
+        for (int key : new int[] {7, 3, 18, 10, 22, 8, 11, 26}) {
+            System.out.println("insert " + key);
+            tree.insert(key);
+            tree.printTree();
         }
-        System.out.println("  comparisons=" + comparisons + ", matches=" + matches);
-        System.out.println("  Edge case: an empty array would perform zero loop iterations.");
-        System.out.println("  Complexity: linear scan uses O(n) time and O(1) extra space.\n");
+        System.out.println("delete 3 to trigger delete fix-up if needed");
+        tree.delete(3);
+        tree.printTree();
+        tree.validateOrThrow();
+        System.out.println("  rotations change shape; recoloring restores black-height invariants\n");
     }
 
     public static void main(String[] args) {

@@ -12,6 +12,7 @@ public class Main {
         TwoFourTreeTraceDemo.run();
         TwoFourCorrespondenceDemo.run();
         RedBlackDeletionConceptDemo.run();
+        RedBlackTreeTestProcedures.run();
         System.out.println("End of Practice 13. Re-run after changing input values to experiment.");
     }
 }

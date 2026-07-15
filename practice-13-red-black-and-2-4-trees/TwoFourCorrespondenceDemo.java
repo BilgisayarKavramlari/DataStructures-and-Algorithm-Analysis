@@ -1,26 +1,15 @@
-import java.util.*;
-
-/**
- * Live teaching demo for TwoFourCorrespondence.
- * The example executes a small deterministic computation so students can
- * count operations and discuss edge cases.
- */
+/** Relates red-black coloring to the 2-3-4 tree view used in lectures. */
 public class TwoFourCorrespondenceDemo {
     public static void run() {
         System.out.println("-- TwoFourCorrespondenceDemo");
-        int[] values = {4, 1, 7, 1, 3};
-        int comparisons = 0;
-        int matches = 0;
-        for (int i = 0; i < values.length; i++) {
-            comparisons++;
-            if (values[i] == 1) {
-                matches++;
-                System.out.println("  found target value 1 at index " + i);
-            }
+        RedBlackTreeEducational tree = new RedBlackTreeEducational();
+        for (int key : new int[] {40, 20, 60, 10, 30, 50, 70, 25, 35}) {
+            tree.insert(key);
         }
-        System.out.println("  comparisons=" + comparisons + ", matches=" + matches);
-        System.out.println("  Edge case: an empty array would perform zero loop iterations.");
-        System.out.println("  Complexity: linear scan uses O(n) time and O(1) extra space.\n");
+        tree.printTree();
+        System.out.println("  Teaching view: a black node plus red children represents one 2-3-4 node.");
+        System.out.println("  Splitting a 4-node corresponds to recoloring and sometimes rotation.");
+        System.out.println("  The actual tree above remains a binary-search tree with red-black invariants.\n");
     }
 
     public static void main(String[] args) {
